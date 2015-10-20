@@ -50,4 +50,33 @@ public class BallDemo
             }
         }
     }
+    
+    /**
+     * Simulates balls bouncing in a box
+     */
+    public void BoxBounce()
+    {
+        int ground = 450;
+        int offset = 550;
+        
+        myCanvas.setVisible(true);
+        
+        myCanvas.drawLine(50, 50, 50, ground);
+        myCanvas.drawLine(50, 50, offset, 50);
+        myCanvas.drawLine(offset, 50, offset, ground);
+        myCanvas.drawLine(50, ground, offset, ground);
+        
+        BoxBall ball = new BoxBall(50, 50, 16, Color.BLUE, ground, myCanvas);
+        ball.draw();
+        
+        boolean finished =  false;
+        while(!finished) {
+            myCanvas.wait(50);           // small delay
+            ball.move();
+            // stop once ball has travelled a certain distance on x axis
+            if(ball.getXPosition() >= 550) {
+                finished = true;
+            }
+        }
+    }
 }
