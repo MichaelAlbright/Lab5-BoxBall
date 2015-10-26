@@ -66,17 +66,26 @@ public class BallDemo
         myCanvas.drawLine(offset, 50, offset, ground);
         myCanvas.drawLine(50, ground, offset, ground);
         
-        BoxBall ball = new BoxBall(50, 50, 16, Color.BLUE, ground, myCanvas);
-        ball.draw();
+        //BoxBall ball = new BoxBall(50, 50, 16, Color.BLUE, ground, myCanvas);
+        BoxBall[] addBall = new BoxBall[3];
         
+        //for(int b = 0;b < 3;b++)
+       // {
+            addBall[0] = new BoxBall(50, 50, 16, Color.BLUE, ground, myCanvas);
+    //}
+         addBall[1] = new BoxBall(150, 50, 16, Color.GREEN, ground, myCanvas);
+          addBall[2] = new BoxBall(50, 150, 16, Color.RED, ground, myCanvas);
         boolean finished =  false;
         while(!finished) {
             myCanvas.wait(50);           // small delay
-            ball.move();
-            // stop once ball has travelled a certain distance on x axis
-            if(ball.getXPosition() >= 550) {
-                finished = true;
+            for(int b = 0;b < 3;b++)
+            {
+                addBall[b].move();
             }
+            //if(addBall.getXPosition() <= 5550) {
+                //myCanvas.wait(50000);
+                //finished = true;
+           // }
         }
     }
 }

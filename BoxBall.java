@@ -26,8 +26,8 @@ public class BoxBall
     private int yPosition;
     private final int groundPosition;      // y position of ground
     private Canvas canvas;
-    private int ySpeed = 10;                // initial downward speed
-    private int xSpeed = 10;
+    private int ySpeed = 8;                // initial downward speed
+    private int xSpeed = 8;
 
     /**
      * Constructor for objects of class BouncingBall
